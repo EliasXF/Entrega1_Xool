@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Creador de personaje
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <form action="" method="POST">
+    {% csrf_token %}
+    
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <p><input type="submit" value="Crear"></p>
+
+    </form>
+
+{% endblock %}  
