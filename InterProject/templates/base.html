@@ -11,13 +11,38 @@
             Titulo por defecto
         {% endblock %}
     </title>
+    <style>
+      body {
+      text-align: center;
+      background: #fcfcfa;
+      color: #818078;
+      font-family: Futura, sans-serif;
+    }
+
+    .container {
+      max-width: 50%;  
+      margin: 40px auto;
+    }
+
+    .hr-text {
+      line-height: 1em;
+      position: relative;
+      outline: 0;
+      border: 0;
+      color: black;
+      text-align: center;
+      height: 1.5em;
+      opacity: .5;
+
+    }
+    </style>
 </head>
 
 <body>
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inicio</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/index/">Inicio</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,23 +59,21 @@
               <a class="nav-link" href="/rpg/character-list/">Listas creadas</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/products/search-products/" method="GET">
+        <form class="form-inline my-2 my-lg-0" action="/rpg/search-character/" method="GET">
           <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
       </div>
     </nav> 
     
-    
-
-            
+  
     <!--End Navbar-->
 
     {% block contenido_que_cambia %}
       Bloque por defecto
     {% endblock %}
 
-    <footer class="bg-light text-center text-lg-start">
+    <footer style="position: fixed; width: 100%; left: 0%; bottom: 0%;" class="bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2020 Copyright:

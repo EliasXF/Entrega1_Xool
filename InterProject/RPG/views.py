@@ -4,7 +4,6 @@ from urllib import request
 from django.shortcuts import render, redirect
 from RPG.models import Character
 from RPG.forms import formulario_character
-from django.http import HttpResponse
 # Create your views here.
 
 def create_character(request):
@@ -35,3 +34,8 @@ def character_list(request):
     } 
     return render(request, 'rpg/character-list.html', context=context)
 
+def search_character(request):
+    search = request.GET['search']
+    characters = Character.objects.filter(name__icontains=search) 
+    context = { 'characters':characters }
+    return render(request, 'rpg/search-character.html', context=context)

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+  Busqueda de personaje
+{% endblock %}
+
+{% block contenido_que_cambia %}
+  <!--Cards-->
+  {% for character in characters%}
+  <div class="card" style="width: 18rem;">
+    <img src="https://cdn-icons-png.flaticon.com/512/37/37943.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">{{character.name}}</h5>
+      <div style=" justify-content: space-between; display:flex; " >
+          <p class="card-text" >Level: {{character.level}}</p>
+          <p class="card-text" >Race: {{character.race}}</p>
+      </div>
+      <div style=" justify-content: space-between; display:flex; ">
+          <p>str: {{character.attackPower}} </p>
+          <p>armor: {{character.defense}}</p>
+          <p>mp: {{character.magic}}</p>
+      </div>
+      <a href="#" class="btn btn-primary">Seleccionar</a>
+    </div>
+  </div>
+  {% endfor %}
+  <!--End Cards-->
+{% endblock %}  
