@@ -1,5 +1,3 @@
-
-from multiprocessing import context
 from urllib import request
 from django.shortcuts import render, redirect
 from RPG.models import Character
@@ -33,9 +31,3 @@ def character_list(request):
         'characters':characters
     } 
     return render(request, 'rpg/character-list.html', context=context)
-
-def search_character(request):
-    search = request.GET['search']
-    characters = Character.objects.filter(name__icontains=search) 
-    context = { 'characters':characters }
-    return render(request, 'rpg/search-character.html', context=context)

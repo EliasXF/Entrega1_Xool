@@ -5,29 +5,34 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
+<br> 
+<h2>Lista de personajes creados</h2>
   <!--Cards-->
   {% for character in characters %}
-    <div class="card" style="width: 18rem;">
-      <img src="https://cdn-icons-png.flaticon.com/512/37/37943.png" class="card-img-top" alt="...">
-      <div class="card-body">
-          <h5 class="card-title" style="text-align: center;">{{character.name}}</h5>
-        <div style=" justify-content: space-between; display:flex; " >
-            <p class="card-text" >Level: {{character.level}}</p>
-            <p class="card-text" >Race: {{character.race}}</p>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/37/37943.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">{{character.name}}</h5>
+          <div style=" justify-content: space-between; display:flex; " >
+              <p class="card-text" >Level: {{character.level}}</p>
+              <p class="card-text" >Race: {{character.race}}</p>
+          </div>
+          <div style=" justify-content: space-between; display:flex; ">
+              <p>str: {{character.attackPower}} </p>
+              <p>armor: {{character.defense}}</p>
+              <p>mp: {{character.magic}}</p>
+          </div>
+          <a href="#" class="btn btn-primary">Seleccionar</a>
         </div>
-        <div style=" justify-content: space-between; display:flex; ">
-            <p>str: {{character.attackPower}} </p>
-            <p>armor: {{character.defense}}</p>
-            <p>mp: {{character.magic}}</p>
-        </div>
-        <a href="#" class="btn btn-primary">Seleccionar</a>
       </div>
+      </div>
+      <div class="col"></div>
     </div>
-
-    <br>
-    
+  </div>
   {% endfor %}
-
-  
   <!--End Cards-->
 {% endblock %}  

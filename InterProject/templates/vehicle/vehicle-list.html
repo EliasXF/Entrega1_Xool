@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+  Personajes creados
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<br> 
+<h2>Lista de vehículos creados</h2>
+  <!--Cards-->
+  {% for vehicle in vehicles%}
+  <div class="container text-center">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2422/2422813.png" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" style="text-align: center;">{{vehicle.type}}</h5>
+            <div style=" justify-content: space-between; display:flex; " >
+                <p class="card-text" >Marca: {{vehicle.branch}}</p>
+                <p class="card-text" >Modelo: {{vehicle.model}}</p>
+            </div>
+            <div style=" justify-content: space-between; display:flex; ">
+                <p>Transmisión: {{vehicle.transmission}} </p>
+                <p>Puertas: {{vehicle.doors}}</p>
+            </div>
+            <a href="#" class="btn btn-primary">Seleccionar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  {% endfor %}
+  <!--End Cards-->
+{% endblock %}  
