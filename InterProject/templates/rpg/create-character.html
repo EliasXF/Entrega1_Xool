@@ -6,17 +6,23 @@
 
 {% block contenido_que_cambia %}
 
-<div style="display: flex;">
+<div class="container text-center">
+    <div class="row">
+      <div class="col"></div>
+        <div class="col">
+            <form action="" method="POST">
+                {% csrf_token %}
 
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        <table>
-            {{form.as_table}}
-        </table>    
-        <p><input type="submit" value="Invocar"></p>
-        
-    </form>
+                <table>
+                    {{form.as_table}}
+                </table>    
+                <br>
+                <p><input type="submit" value="Invocar"></p>
+            </form>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
 </div>
 
 {% endblock %}  

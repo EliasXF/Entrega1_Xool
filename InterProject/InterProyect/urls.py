@@ -10,4 +10,5 @@ urlpatterns = [
     path('lists/', lists, name='lists'),
     path('rpg/', include('RPG.urls')),
     path('vehicle/', include('vehicle.urls')),
+    path('pet/', include('pet.urls')),
 ]

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Creador de mascotas
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+              <form action="" method="POST">
+                  {% csrf_token %}
+          
+                  <table>
+                      {{form.as_table}}
+                  </table>   
+                  <br> 
+                  <p><input type="submit" value="Adoptar"></p>
+                  
+              </form>
+          </div>
+      </div>
+      <div class="col"></div>
+    </div>
+</div>
+<div style="display: flex;">
+
+{% endblock %}  

@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% block titulo %}
+  Mascotas creadas
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<br> 
+<h2>Lista de mascotas creados</h2>
+  <!--Cards-->
+  {% for pet in pets %}
+  <div class="container text-center">
+  <div class="row">
+      <div class="col"></div>
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+          <img src="https://cdn.icon-icons.com/icons2/1948/PNG/512/free-30-instagram-stories-icons23_122570.png" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" style="text-align: center;">{{pet.name}}</h5>
+          <div style=" justify-content: space-between; display:flex; " >
+              <p class="card-text" >Edad: {{pet.age}}</p>
+              <p class="card-text" >Tipo: {{pet.type}}</p>
+          </div>
+          <div style=" justify-content: space-between; display:flex; ">
+              <p>Poder: {{pet.powertype}} </p>
+              <p>Alas: {{pet.wings}}</p>
+          </div>
+          <div>
+              <p class="card-text" style="text-align: center;">{{pet.description}}</p>
+          </div>
+          <br>
+          <a href="#" class="btn btn-primary">Seleccionar</a>
+          </div>
+      </div>
+      </div>
+      <div class="col"></div>
+  </div>
+  </div>
+  {% endfor %}
+  <!--End Cards-->    
+{% endblock %}  

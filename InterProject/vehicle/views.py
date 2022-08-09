@@ -30,9 +30,3 @@ def vehicle_list(request):
         'vehicles':vehicles
     } 
     return render(request, 'vehicle/vehicle-list.html', context=context)
-
-def search_vehicle(request):
-    search = request.GET['search']
-    vehicles = Vehicle.objects.filter(type__icontains=search) 
-    context = { 'vehicles':vehicles }
-    return render(request, 'search-list.html', context=context)
