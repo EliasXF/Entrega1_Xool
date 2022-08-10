@@ -13,7 +13,7 @@ def search_list(request):
     search = request.GET['search']
     characters = Character.objects.filter(name__icontains=search) 
     vehicles = Vehicle.objects.filter(type__icontains=search) 
-    mascotas = Pet.objects.filter(name__icontains=search)
+    mascotas = Pet.objects.filter(type__icontains=search)
     context = { 'characters':characters, 'vehicles':vehicles, 'mascotas':mascotas}
     return render(request, 'search-list.html', context=context)
 
